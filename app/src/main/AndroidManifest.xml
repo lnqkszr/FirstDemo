@@ -54,7 +54,8 @@
         <activity android:name="com.example.layoutui.FrameUIActivity" />
         <activity android:name="com.example.layoutui.PercentFrameActivity" />
         <activity android:name="com.example.layoutui.ListViewUIActivity" />
-        <activity android:name="com.example.layoutui.ListViewUITowActivity"></activity>
+        <activity android:name="com.example.layoutui.ListViewUITowActivity" />
+        <activity android:name="com.example.layoutui.RecyclerActivity"></activity>
     </application>
 
 </manifest>

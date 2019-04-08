@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import com.example.layoutui.FrameUIActivity;
 import com.example.layoutui.LinearLayoutUIActivity;
 import com.example.layoutui.ListViewUIActivity;
 import com.example.layoutui.ListViewUITowActivity;
+import com.example.layoutui.RecyclerActivity;
 import com.example.layoutui.RelativeLayoutUiActivity;
 import com.example.layoutui.RelativeLayoutUiTowActivity;
 
@@ -75,6 +77,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
         Button listViewUI_2 = findViewById(R.id.listViewUI_2);
         listViewUI_2.setOnClickListener(this);
+
+        Button recycler = findViewById(R.id.recyclerViewUI_1);
+        recycler.setOnClickListener(this);
 
     }
 
@@ -196,6 +201,13 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                  * 调用自定义ListView控件
                  */
                 intent = new Intent(this, ListViewUITowActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.recyclerViewUI_1:
+                /**
+                 * 调用自定义RecyclerView控件
+                 */
+                intent = new Intent(this, RecyclerActivity.class);
                 startActivity(intent);
                 break;
         }

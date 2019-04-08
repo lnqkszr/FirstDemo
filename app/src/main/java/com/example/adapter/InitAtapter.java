@@ -24,17 +24,45 @@ public class InitAtapter extends ArrayAdapter<Item> {
         this.resource = resource;
     }
 
+    /**
+     * @param position list数据下标
+     * @param convertView 当前布局的缓存
+     * @param parent
+     * @return
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Item item = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(resource, parent, false);
 
-        ImageView img = view.findViewById(R.id.img);
-        TextView textView = view.findViewById(R.id.text);
-        img.setImageResource(item.getResource());
-        textView.setText(item.getName());
+        /**
+         * 使用缓存避免每次都加载布局
+         */
+        View view;
+        ViewHolder viewHolder = null;
+        if(convertView == null){
+            view = LayoutInflater.from(getContext()).inflate(resource, parent, false);
+
+            viewHolder = new ViewHolder();
+            ImageView imageView = view.findViewById(R.id.img);
+            TextView textView = view.findViewById(R.id.text);
+
+            viewHolder.imageView = imageView;
+            viewHolder.textView = textView;
+            view.setTag(viewHolder);
+        }else{
+            view = convertView;
+            viewHolder = (ViewHolder)view.getTag();
+        }
+        viewHolder.textView.setText(item.getName());
+        viewHolder.imageView.setImageResource(item.getResource());
 
         return view;
+    }
+
+    class ViewHolder{
+        ImageView imageView;
+
+        TextView textView;
     }
 }

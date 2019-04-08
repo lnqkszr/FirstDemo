@@ -69,17 +69,23 @@
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/listViewUI_1"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="ListView控件"
             />
         <Button
             android:id="@+id/listViewUI_2"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:text="ListView控件2" />
+        <Button
+            android:id="@+id/recyclerViewUI_1"
+            android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="自定义ListView控件"
+            android:text="recyclerView"
             />
     </LinearLayout>
 
